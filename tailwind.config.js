@@ -16,6 +16,9 @@ module.exports = {
         fira: ["Fira Mono", ...defaultTheme.fontFamily.mono],
         poppins: ["Poppins", ...defaultTheme.fontFamily.serif],
       },
+      boxShadow: {
+        custom: "0px 7px 14px rgba(0, 0, 0, 0.25)",
+      },
     },
   },
   plugins: [],

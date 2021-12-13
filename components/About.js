@@ -76,19 +76,23 @@ function About() {
                 >
                   <div>
                     {posts.text}
-                    <div className="flex w-fit ml-auto items-center font-poppins text-sm text-[#CF8387] px-4 py-2 cursor-pointer group transition transform duration-200">
+                    <a
+                      href={posts.buttonUrl}
+                      target="_blank"
+                      className="flex w-fit ml-auto items-center font-poppins text-sm text-[#CF8387] px-4 py-2 cursor-pointer group transition transform duration-200"
+                    >
                       <span className="transition transform group-hover:-translate-x-1">
                         {posts.buttonText}
                       </span>
-
                       <FaArrowRight className="inline ml-2 transition transform group-hover:translate-x-1 group-hover:text-color-secondary text-sm" />
+
                       {/* <div className="ml-2">
                         <svg
                           src="/assets/arrow.svg"
 
                         />
                       </div> */}
-                    </div>
+                    </a>
                   </div>
                 </Tab.Panel>
               ))}

@@ -1,10 +1,29 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn, FaDribbble, FaMediumM } from "react-icons/fa";
 
 function Header() {
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  const handleScroll = () => {
+    setIsScrolling(window.pageYOffset > 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header>
-      <nav className="flex items-center px-[30px] py-[15px] justify-between bg-primary sticky">
+      <nav
+        className={`flex items-center px-[30px] py-[15px] justify-between bg-opacity-80 bg-primary backdrop-blur-lg top-0 fixed w-full ${
+          isScrolling && " transition transform duration-200 shadow-custom"
+        }`}
+      >
         <div className="relative h-12 w-12">
           <Image
             src="/assets/logo.svg"
@@ -33,7 +52,7 @@ function Header() {
           Download resume
         </button>
       </nav>
-      <div className="px-[100px] mt-[20px]">
+      <div className="px-[100px] mt-[120px]">
         <span className="font-fira text-secondary text-[20px]">
           Hi, my name is
         </span>
