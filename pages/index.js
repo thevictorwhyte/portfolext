@@ -1,10 +1,13 @@
 import Head from "next/head";
 import About from "../components/About";
+import Contact from "../components/Contact";
 import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Work from "../components/Work";
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen max-w-[100%]">
+    <div className="h-screen w-screen max-w-[100%] flex flex-col items-center ">
       <Head>
         <title>Victor Whyte</title>
         <link rel="icon" href="/favicon.ico" />
@@ -17,13 +20,16 @@ export default function Home() {
           ref="stylesheet"
         />
       </Head>
-      <div className="space-y-[150px]">
-        <Header />
+      <Header />
+      <main className="max-w-[1440px] flex flex-col space-y-[111px]">
+        <Hero />
         <About />
-      </div>
+        <Work />
+        <Contact />
+      </main>
 
-      {/* <Work />
-      <Contact />
+      {/* 
+      
       <Footer /> */}
     </div>
   );

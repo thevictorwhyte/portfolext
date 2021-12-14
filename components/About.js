@@ -2,6 +2,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import { FaArrowRight } from "react-icons/fa";
+import SectionHeader from "./SectionHeader";
+import SectionContainer from "./SectionContainer";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -36,13 +38,8 @@ function About() {
     },
   });
   return (
-    <section className="px-[100px] w-[100%]">
-      <div className="flex items-center">
-        <h2 className="font-poppins font-semibold text-[#f9f9f9] text-[24px]">
-          About me
-        </h2>
-        <span className="border-b-[1px] w-40 ml-5 border-secondary" />
-      </div>
+    <SectionContainer>
+      <SectionHeader>About me</SectionHeader>
 
       <div className="flex items-center">
         <div className="w-full max-w-md">
@@ -109,7 +106,7 @@ function About() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 }
 
