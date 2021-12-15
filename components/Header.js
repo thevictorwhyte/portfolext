@@ -19,8 +19,8 @@ function Header() {
   return (
     <header className="w-full">
       <nav
-        className={`flex items-center px-[30px] py-[15px] justify-between bg-opacity-80 bg-primary backdrop-blur-lg top-0 fixed w-full ${
-          isScrolling && " transition transform duration-200 shadow-custom z-50"
+        className={`flex items-center px-[30px] py-[15px] justify-between bg-opacity-80 bg-primary backdrop-blur-lg top-0 fixed w-full z-50 ${
+          isScrolling && " transition transform duration-200 shadow-custom"
         }`}
       >
         <div className="relative h-12 w-12">
@@ -50,6 +50,16 @@ function Header() {
         <button className="text-secondary text-[13px] font-fira border border-secondary p-[10px] rounded-[5px]">
           Download resume
         </button>
+        {/* <a
+          href="https://google.com"
+          target="_blank"
+          class="rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-secondary text-secondary"
+        >
+          <span class="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-secondary top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+          <span class=" font-fira text-sm relative text-secondary transition duration-300 group-hover:text-white ease">
+            Download resume
+          </span>
+        </a> */}
       </nav>
     </header>
   );

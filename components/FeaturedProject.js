@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaPlayCircle } from "react-icons/fa";
 
 function FeaturedProject({
   projectImg,
@@ -11,11 +11,11 @@ function FeaturedProject({
 }) {
   return (
     <div className="flex flex-col max-w-[586px] max-h-[678px] p-0 shadow-featuredProject">
-      <div className="relative w-full h-[333px] top-0">
-        <Image src={projectImg} layout="fill" objectFit="contain" />
-        {/* play icon */}
+      <div className="relative w-full h-[333px] top-0 left-0 rounded-[10px] overflow-hidden">
+        <Image src={projectImg} layout="fill" objectFit="cover" />
+        <FaPlayCircle className="absolute top-1/2 left-1/2 h-16 w-16 translate-x-[-50%] translate-y-[-50%] text-primary opacity-[80%]" />
       </div>
-      <div className="flex flex-col h-[369px] bg-[#05203C] px-[40px] py-[24px] rounded-[10px] -mt-6 z-10">
+      <div className="flex flex-col h-64 bg-[#05203C] px-[40px] py-[24px] rounded-[10px] overflow-hidden -mt-6 z-10">
         <div className="flex flex-col space-y-[20px]">
           <h4 className="text-whiteone text-[18px] font-poppins font-semibold">
             {title}

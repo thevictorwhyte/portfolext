@@ -82,13 +82,6 @@ function About() {
                         {posts.buttonText}
                       </span>
                       <FaArrowRight className="inline ml-2 transition transform group-hover:translate-x-1 group-hover:text-color-secondary text-sm" />
-
-                      {/* <div className="ml-2">
-                        <svg
-                          src="/assets/arrow.svg"
-
-                        />
-                      </div> */}
                     </a>
                   </div>
                 </Tab.Panel>

@@ -20,8 +20,26 @@ body {
   @apply rounded-full bg-[#8892b05e];
 }
 
+::-moz-selection {
+  color: #ccd6f6;
+  background-color: #233554;
+}
+
+::selection {
+  color: #ccd6f6;
+  background-color: #233554;
+}
+
 @layer components {
   .icon {
     @apply text-[#C4C4C4] cursor-pointer;
+  }
+
+  .background {
+    background: linear-gradient(
+      0deg,
+      rgba(4, 26, 48, 0.63),
+      rgba(4, 26, 48, 0.63)
+    );
   }
 }
