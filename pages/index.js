@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { FaDribbble, FaGithub, FaLinkedinIn, FaMediumM } from "react-icons/fa";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
@@ -28,9 +29,20 @@ export default function Home() {
         <Contact />
       </main>
 
-      {/* 
-      
-      <Footer /> */}
+      <footer className="mt-[80px] pb-[20px]">
+        <div className="flex flex-col justify-center items-center space-y-2">
+          <h4 className="font-fira font-normal text-whiteone text-sm">
+            Designed and built by Victor{" "}
+            <span className="text-secondary">Whyte</span>
+          </h4>
+          <div className="flex space-x-4">
+            <FaGithub className="icon" />
+            <FaLinkedinIn className="icon" />
+            <FaDribbble className="icon" />
+            <FaMediumM className="icon" />
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
