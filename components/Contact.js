@@ -6,8 +6,8 @@ function Contact() {
   return (
     <SectionContainer>
       <SectionHeader>Contact</SectionHeader>
-      <div className="flex justify-between w-full space-x-[40px]">
-        <div className="flex flex-col justify-between w-[50%]">
+      <div className="flex flex-col md:flex-row md:justify-between w-full md:space-x-[40px]">
+        <div className="flex flex-col justify-between w-full md:w-[50%]">
           <p className="font-poppins font-medium text-md max-w-[380px] text-whitetwo">
             I would love to hear from you on how I could be of help to your team
             or project. You can also reach me via email:
@@ -20,7 +20,7 @@ function Contact() {
             </span>
           </h2>
         </div>
-        <div className="w-[50%]">
+        <div className="w-full md:w-[50%]">
           <FormComponent />
         </div>
       </div>

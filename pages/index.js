@@ -8,7 +8,7 @@ import Work from "../components/Work";
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen max-w-[100%] flex flex-col items-center ">
+    <div className="">
       <Head>
         <title>Victor Whyte</title>
         <link rel="icon" href="/favicon.ico" />
@@ -22,7 +22,7 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <main className="max-w-[1440px] flex flex-col space-y-[111px]">
+      <main className="w-full xl:max-w-[1440px] flex flex-col space-y-[111px]">
         <Hero />
         <About />
         <Work />

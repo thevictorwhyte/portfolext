@@ -13,7 +13,7 @@ function About() {
   let [categories] = useState({
     Engineering: {
       text: (
-        <p className="font-poppins text-sm font-medium leading-[170%]">
+        <p className="font-poppins font-normal text-sm xl:text-md leading-[170%]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis at mi
           massa nunc rhoncus egestas sapien. Enim dui blandit nullam suscipit.
           Pharetra, arcu, pharetra, diam at tellus. <br />
@@ -41,16 +41,16 @@ function About() {
     <SectionContainer>
       <SectionHeader>About me</SectionHeader>
 
-      <div className="flex items-center">
-        <div className="w-full max-w-md">
+      <div className="flex flex-col md:flex-row md:items-center space-y-[40px] md:space-y-0">
+        <div className="w-full md:max-w-sm  lg:max-w-lg xl:max-w-xl">
           <Tab.Group>
-            <Tab.List className="flex px-4 py-2 space-x-4 bg-tertiary rounded-xl">
+            <Tab.List className="flex px-2 py-2 space-x-4 bg-tertiary rounded-xl">
               {Object.keys(categories).map((category) => (
                 <Tab
                   key={category}
                   className={({ selected }) =>
                     classNames(
-                      "w-full font-fira py-2.5 text-sm leading-5 font-medium text-secondary rounded-lg",
+                      "w-full font-fira py-2.5 text-[12px] md:text-sm leading-5 font-medium text-secondary rounded-lg",
                       "focus:outline-none transition duration-200",
                       selected
                         ? "bg-primary shadow text-secondary"
@@ -67,7 +67,7 @@ function About() {
                 <Tab.Panel
                   key={idx}
                   className={classNames(
-                    "bg-tertiary rounded-xl p-3 text-[#8892B0]",
+                    "bg-tertiary rounded-xl p-3 text-sm text-[#8892B0]",
                     "focus:outline-none"
                   )}
                 >
@@ -89,8 +89,8 @@ function About() {
             </Tab.Panels>
           </Tab.Group>
         </div>
-        <div className="ml-auto">
-          <div className="relative h-[400px] w-[400px]">
+        <div className="mx-auto lg:mx-0 lg:ml-auto ">
+          <div className="relative h-64 w-64 xl:h-[400px] xl:w-[400px] mt-[20px] md:mt-0">
             <Image
               src="/assets/my_image.png"
               layout="fill"

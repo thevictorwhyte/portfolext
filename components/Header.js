@@ -32,7 +32,7 @@ function Header() {
           />
         </div>
 
-        <div className="flex space-x-[86px]">
+        <div className=" hidden lg:flex space-x-[86px]">
           <div className="font-fira font-medium text-secondary text-[15px]">
             Home
           </div>
@@ -47,7 +47,7 @@ function Header() {
           </div>
         </div>
 
-        <button className="text-secondary text-[13px] font-fira border border-secondary p-[10px] rounded-[5px]">
+        <button className="hidden lg:inline text-secondary text-[13px] font-fira border border-secondary p-[10px] rounded-[5px]">
           Download resume
         </button>
         {/* <a

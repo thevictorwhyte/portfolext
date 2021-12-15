@@ -15,15 +15,15 @@ function FeaturedProject({
         <Image src={projectImg} layout="fill" objectFit="cover" />
         <FaPlayCircle className="absolute top-1/2 left-1/2 h-16 w-16 translate-x-[-50%] translate-y-[-50%] text-primary opacity-[80%]" />
       </div>
-      <div className="flex flex-col h-64 bg-[#05203C] px-[40px] py-[24px] rounded-[10px] overflow-hidden -mt-6 z-10">
-        <div className="flex flex-col space-y-[20px]">
-          <h4 className="text-whiteone text-[18px] font-poppins font-semibold">
+      <div className="flex flex-col h-64 bg-[#05203C] px-4 py-6 lg:px-[30px] lg:py-[24px] rounded-[10px] overflow-hidden -mt-6 z-10">
+        <div className="flex flex-col space-y-[20px] lg:space-y-[20px]">
+          <h4 className="text-whiteone text-[16px] xl:text-[18px] font-poppins font-semibold">
             {title}
           </h4>
-          <p className="text-whitetwo font-poppins text-[16px] font-medium">
+          <p className="text-whitetwo font-poppins text-[13px] lg:text-[14px] xl:text-[16px] font-medium">
             {desc}
           </p>
-          <span className="font-fira text-secondary font-medium">
+          <span className="font-fira text-secondary font-medium text-xs lg:text-[13px] xl:text-[16px] mt-4 lg:mt-0">
             {techUsed.split(" ").join(" / ")}
           </span>
         </div>

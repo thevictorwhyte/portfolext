@@ -65,18 +65,20 @@ function FormComponent(props) {
           <FormInput
             label="Full name"
             name="name"
+            textarea={false}
             type="text"
             placeholder="Please enter your name"
           />
           <FormInput
             name="email"
             label="Email"
+            textarea={false}
             placeholder="Please enter your email"
             type="email"
           />
           <FormInput
             label="Message"
-            textarea
+            textarea={true}
             name="message"
             type="text"
             placeholder="Your message"
