@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 function OtherProject({ title, sourceUrl, liveUrl, desc, ongoing }) {
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col justify-between h-40">
       <h4 className="text-whiteone text-[18px] font-poppins font-medium">
         {title}
 
@@ -10,7 +10,7 @@ function OtherProject({ title, sourceUrl, liveUrl, desc, ongoing }) {
           <sup className="font-fira text-xs font-light pl-1">ongoing</sup>
         )}
       </h4>
-      <p className="text-whitetwo font-poppins h-16 text-[16px] font-normal">
+      <p className="text-whitetwo font-poppins h-16 text-[14px] xs:text-[12px] md:text-[14px] xl:text-[16px] font-normal">
         {desc}
       </p>
       <a

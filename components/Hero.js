@@ -3,8 +3,8 @@ import { FaGithub, FaLinkedinIn, FaDribbble, FaMediumM } from "react-icons/fa";
 
 function Hero() {
   return (
-    <div className="relative h-screen 2xl:max-h-[1024px]">
-      <div className="pl-[20px] lg:px-[100px]  mt-[120px]">
+    <div className="relative h-screen 2xl:max-h-[1024px] 2xl:max-w-[1440px]">
+      <div className="absolute pl-[20px] lg:px-[100px] top-1/4">
         <span className="font-fira text-secondary text-[1.25rem]">
           Hi, my name is
         </span>
@@ -20,7 +20,7 @@ function Hero() {
           <span className="font-poppins text-secondary text-[24px]">/</span> UI
           & UX Designer
         </span> */}
-        <p className="text-[#8892B0] text-[#20px] font-poppins mt-6 max-w-lg">
+        <p className="text-[#8892B0] text-[16px] lg:text-[20px] font-poppins mt-6 w-[80vw] md:w-[60vw] lg:w-fit lg:max-w-xl">
           I’m a <span className="text-secondary">design minded</span> full stack
           developer with a focus on creating usable and aesthetically pleasing
           products.

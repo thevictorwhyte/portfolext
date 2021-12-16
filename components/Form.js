@@ -18,7 +18,7 @@ const FormInput = ({ label, placeholder, ...props }) => {
         ) : null}
       </div>
 
-      {props.textarea ? (
+      {props.textarea === "true" ? (
         <textarea
           placeholder={placeholder}
           className={`h-16 w-full bg-tertiary border mt-2 px-4 py-2 rounded-[6px] text-whiteone text-sm font-poppins font-light outline-none min-h-[150px] ${
@@ -65,20 +65,20 @@ function FormComponent(props) {
           <FormInput
             label="Full name"
             name="name"
-            textarea={false}
+            textarea="false"
             type="text"
             placeholder="Please enter your name"
           />
           <FormInput
             name="email"
             label="Email"
-            textarea={false}
+            textarea="false"
             placeholder="Please enter your email"
             type="email"
           />
           <FormInput
             label="Message"
-            textarea={true}
+            textarea="true"
             name="message"
             type="text"
             placeholder="Your message"

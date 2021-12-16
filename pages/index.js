@@ -22,7 +22,7 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <main className="w-full xl:max-w-[1440px] flex flex-col space-y-[111px]">
+      <main className="w-full xl:max-w-[1440px] flex flex-col mx-auto space-y-[111px]">
         <Hero />
         <About />
         <Work />

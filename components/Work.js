@@ -14,7 +14,7 @@ function Work() {
       <h3 className="font-fira text-secondary font-medium text-[20px] my-4">
         Featured Projects
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] xl:gap-[40px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] xl:gap-[40px]">
         {featuredProjects.map(
           ({ id, techUsed, title, projectImg, desc, sourceUrl, liveUrl }) => (
             <FeaturedProject
@@ -33,7 +33,7 @@ function Work() {
         <h3 className="font-fira text-secondary font-medium text-[20px] my-4">
           Other Projects
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[40px]">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-[40px] xs:gap-[20px] xl:gap-[40px]">
           {otherProjects.map(
             ({ id, title, desc, ongoing, sourceUrl, liveUrl }) => (
               <OtherProject
