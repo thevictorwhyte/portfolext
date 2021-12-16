@@ -1,6 +1,6 @@
 function SectionHeader(props) {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center mb-4">
       <h2 className="font-poppins font-normal text-[#f9f9f9] text-[18px] lg:text-[24px]">
         {props.children}
       </h2>

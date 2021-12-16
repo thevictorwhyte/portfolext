@@ -7,11 +7,11 @@ import OtherProject from "./OtherProject";
 import uxCaseStudies from "../content/projects/uxCaseStudies";
 import CaseStudy from "./CaseStudy";
 
-function Work() {
+function Work({ sectionRef }) {
   return (
-    <SectionContainer>
+    <SectionContainer sectionRef={sectionRef}>
       <SectionHeader>Work</SectionHeader>
-      <h3 className="font-fira text-secondary font-medium text-[20px] my-4">
+      <h3 className="font-fira text-secondary font-medium text-[20px]">
         Featured Projects
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] xl:gap-[40px]">

@@ -9,7 +9,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function About() {
+function About({ sectionRef }) {
   let [categories] = useState({
     Engineering: {
       text: (
@@ -38,7 +38,7 @@ function About() {
     },
   });
   return (
-    <SectionContainer>
+    <SectionContainer sectionRef={sectionRef}>
       <SectionHeader>About me</SectionHeader>
 
       <div className="flex flex-col md:flex-row md:items-center space-y-[40px] md:space-y-0">

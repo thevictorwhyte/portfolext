@@ -8,20 +8,22 @@ const FormInput = ({ label, placeholder, ...props }) => {
     <div>
       <div className="flex justify-between items-center">
         <label
-          className="font-poppins font-sm font-regular text-whiteone"
+          className="font-poppins text-[14px] md:text-md font-regular text-whiteone"
           htmlFor={props.id || props.name}
         >
           {label}
         </label>
         {meta.touched && meta.error ? (
-          <div className="font-fira text-secondary text-xs">{meta.error}</div>
+          <div className="font-fira text-secondary text-[10px] md:text-xs">
+            {meta.error}
+          </div>
         ) : null}
       </div>
 
       {props.textarea === "true" ? (
         <textarea
           placeholder={placeholder}
-          className={`h-16 w-full bg-tertiary border mt-2 px-4 py-2 rounded-[6px] text-whiteone text-sm font-poppins font-light outline-none min-h-[150px] ${
+          className={`h-14 md:h-16 w-full bg-tertiary border mt-2 px-4 py-2 rounded-[6px] text-whiteone text-[12px] md:text-sm font-poppins font-light outline-none min-h-[100px] md:min-h-[150px]  ${
             meta.touched && meta.error ? "border-secondary" : "border-whitetwo"
           }`}
           {...field}
@@ -30,7 +32,7 @@ const FormInput = ({ label, placeholder, ...props }) => {
       ) : (
         <input
           placeholder={placeholder}
-          className={`h-16 w-full bg-tertiary border mt-2 px-4 py-2 rounded-[6px] text-whiteone text-sm font-poppins font-light outline-none ${
+          className={`h-12 md:h-16 w-full bg-tertiary border mt-2 px-4 py-2 rounded-[6px] text-whiteone text-[12px] md:text-sm font-poppins font-light outline-none ${
             meta.touched && meta.error ? "border-secondary" : "border-whitetwo"
           }`}
           {...field}

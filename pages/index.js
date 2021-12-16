@@ -6,7 +6,13 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Work from "../components/Work";
 
+import { useRef } from "react";
+
 export default function Home() {
+  const navRef = useRef(null);
+  const aboutRef = useRef(null);
+  const workRef = useRef(null);
+  const contactRef = useRef(null);
   return (
     <div className="">
       <Head>
@@ -21,12 +27,17 @@ export default function Home() {
           ref="stylesheet"
         />
       </Head>
-      <Header />
+      <Header
+        navRef={navRef}
+        aboutRef={aboutRef}
+        workRef={workRef}
+        contactRef={contactRef}
+      />
       <main className="w-full xl:max-w-[1440px] flex flex-col mx-auto space-y-[111px]">
         <Hero />
-        <About />
-        <Work />
-        <Contact />
+        <About sectionRef={aboutRef} />
+        <Work sectionRef={workRef} />
+        <Contact sectionRef={contactRef} />
       </main>
 
       <footer className="mt-[80px] pb-[20px]">

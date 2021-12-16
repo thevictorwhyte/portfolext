@@ -1,11 +1,18 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-function Header() {
+function Header({ aboutRef, workRef, contactRef, navRef }) {
   const [isScrolling, setIsScrolling] = useState(false);
 
   const handleScroll = () => {
     setIsScrolling(window.pageYOffset > 50);
+  };
+
+  const scrollToRef = (ref) => {
+    window.scrollTo(
+      0,
+      ref.current.offsetTop - navRef.current.clientHeight - 10
+    );
   };
 
   useEffect(() => {
@@ -19,11 +26,12 @@ function Header() {
   return (
     <header className="w-full">
       <nav
-        className={`flex items-center px-[30px] py-[15px] justify-between bg-opacity-80 bg-primary backdrop-blur-lg top-0 fixed w-full z-50 ${
+        ref={navRef}
+        className={`flex items-center px-[20px] lg:px-[30px] py-[15px] justify-between bg-opacity-80 bg-primary backdrop-blur-lg top-0 fixed w-full z-50 ${
           isScrolling && " transition transform duration-200 shadow-custom"
         }`}
       >
-        <div className="relative h-12 w-12">
+        <div className="relative h-10 w-10 lg:h-12 lg:w-12">
           <Image
             src="/assets/logo.svg"
             layout="fill"
@@ -33,16 +41,28 @@ function Header() {
         </div>
 
         <div className=" hidden lg:flex space-x-[86px]">
-          <div className="font-fira font-medium text-secondary text-[15px]">
+          <div
+            className="font-fira font-medium text-secondary text-[15px] cursor-pointer"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Home
           </div>
-          <div className="font-fira font-medium text-[#8892B0] text-[15px]">
+          <div
+            onClick={() => scrollToRef(aboutRef)}
+            className="font-fira font-medium text-[#8892B0] text-[15px] cursor-pointer"
+          >
             About
           </div>
-          <div className="font-fira font-medium text-[#8892B0] text-[15px]">
+          <div
+            className="font-fira font-medium text-[#8892B0] text-[15px] cursor-pointer"
+            onClick={() => scrollToRef(workRef)}
+          >
             Work
           </div>
-          <div className="font-fira font-medium text-[#8892B0] text-[15px]">
+          <div
+            className="font-fira font-medium text-[#8892B0] text-[15px] cursor-pointer"
+            onClick={() => scrollToRef(contactRef)}
+          >
             Contact
           </div>
         </div>
