@@ -1,11 +1,61 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+const defaultColor = "text-[#8892B0]";
+const active = "text-secondary";
 function Header({ aboutRef, workRef, contactRef, navRef }) {
   const [isScrolling, setIsScrolling] = useState(false);
+  const [homeColor, setHomeColour] = useState(active);
+  const [aboutColor, setAboutColour] = useState(defaultColor);
+  const [workColor, setWorkColor] = useState(defaultColor);
+  const [contactColor, setContactColor] = useState(defaultColor);
 
   const handleScroll = () => {
     setIsScrolling(window.pageYOffset > 50);
+
+    if (
+      window.scrollY >= 0 &&
+      window.scrollY <
+        aboutRef.current.offsetTop - navRef.current.clientHeight - 10
+    ) {
+      setHomeColour(active);
+    } else {
+      setHomeColour(defaultColor);
+    }
+
+    // about condition
+    if (
+      window.scrollY >=
+        aboutRef.current.offsetTop - navRef.current.clientHeight - 10 &&
+      window.scrollY <
+        workRef.current.offsetTop - navRef.current.clientHeight - 10
+    ) {
+      setAboutColour(active);
+    } else {
+      setAboutColour(defaultColor);
+    }
+
+    // work condition
+    if (
+      window.scrollY >=
+        workRef.current.offsetTop - navRef.current.clientHeight - 10 &&
+      window.scrollY <
+        contactRef.current.offsetTop - navRef.current.clientHeight - 10
+    ) {
+      setWorkColor(active);
+    } else {
+      setWorkColor(defaultColor);
+    }
+
+    // contact condition
+    if (
+      window.scrollY >=
+      contactRef.current.offsetTop - navRef.current.clientHeight - 10
+    ) {
+      setContactColor(active);
+    } else {
+      setContactColor(defaultColor);
+    }
   };
 
   const scrollToRef = (ref) => {
@@ -14,6 +64,7 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
       ref.current.offsetTop - navRef.current.clientHeight - 10
     );
   };
+  // console.log(workRef);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -40,34 +91,34 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
           />
         </div>
 
-        <div className=" hidden lg:flex space-x-[86px]">
+        <div className=" hidden md:flex md:space-x-[46px] lg:space-x-[86px]">
           <div
-            className="font-fira font-medium text-secondary text-[15px] cursor-pointer"
+            className={`font-fira font-medium text-secondary text-[15px] cursor-pointer ${homeColor}`}
             onClick={() => window.scrollTo(0, 0)}
           >
             Home
           </div>
           <div
             onClick={() => scrollToRef(aboutRef)}
-            className="font-fira font-medium text-[#8892B0] text-[15px] cursor-pointer"
+            className={`font-fira font-medium text-[15px] cursor-pointer ${aboutColor}`}
           >
             About
           </div>
           <div
-            className="font-fira font-medium text-[#8892B0] text-[15px] cursor-pointer"
+            className={`font-fira font-medium text-secondary text-[15px] cursor-pointer ${workColor}`}
             onClick={() => scrollToRef(workRef)}
           >
             Work
           </div>
           <div
-            className="font-fira font-medium text-[#8892B0] text-[15px] cursor-pointer"
+            className={`font-fira font-medium text-secondary text-[15px] cursor-pointer ${contactColor}`}
             onClick={() => scrollToRef(contactRef)}
           >
             Contact
           </div>
         </div>
 
-        <button className="hidden lg:inline text-secondary text-[13px] font-fira border border-secondary p-[10px] rounded-[5px]">
+        <button className="hidden md:inline text-secondary text-[12px] lg:text-[13px] font-fira border border-secondary p-[6px] lg:p-[10px] rounded-[5px]">
           Download resume
         </button>
         {/* <a
