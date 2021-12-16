@@ -3,13 +3,13 @@ import { FaArrowRight } from "react-icons/fa";
 
 function CaseStudy({ projectImg, desc, title, studyUrl, ongoing = false }) {
   return (
-    <div className="rounded-[10px] min-w-[70vw] md:min-w-[40vw] lg:min-w-full lg:w-full shadow-featuredProject">
-      <div className="relative w-full h-56 -z-10 -mb-4   overflow-hidden opacity-60">
+    <div className="rounded-[10px] min-w-[70vw] md:min-w-[40vw] lg:min-w-full lg:w-full shadow-featuredProject transition duration-200 hover:-translate-y-2 group cursor-pointer">
+      <div className="relative w-full h-56 -z-10 -mb-4 overflow-hidden opacity-60">
         <Image
           src={projectImg}
           layout="fill"
           objectFit="cover"
-          className="rounded-[10px]"
+          className="rounded-[10px] opacity-[60%] group-hover:opacity-100 transition duration-200"
         />
       </div>
       <div className="flex flex-col space-y-2 bg-tertiary rounded-[10px] px-4 py-2">
@@ -28,9 +28,7 @@ function CaseStudy({ projectImg, desc, title, studyUrl, ongoing = false }) {
           target="_blank"
           className="flex w-fit items-center font-poppins text-sm text-[#CF8387] py-2 cursor-pointer group transition transform duration-200"
         >
-          <span className="transition transform group-hover:-translate-x-1 text-sm">
-            Read case study
-          </span>
+          <span className="transition transform text-sm">Read case study</span>
           <FaArrowRight className="inline ml-2 transition transform group-hover:translate-x-1 group-hover:text-color-secondary text-xs" />
         </a>
       </div>

@@ -86,9 +86,7 @@ function FormComponent(props) {
             placeholder="Your message"
           />
           <div className="w-fit ml-auto">
-            <button className="text-secondary text-[13px] font-fira border border-secondary p-[10px] rounded-[5px]">
-              Send message
-            </button>
+            <button className="primaryButton p-[10px]">Send message</button>
           </div>
         </Form>
       )}

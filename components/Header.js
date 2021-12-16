@@ -93,34 +93,32 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
 
         <div className=" hidden md:flex md:space-x-[46px] lg:space-x-[86px]">
           <div
-            className={`font-fira font-medium text-secondary text-[15px] cursor-pointer ${homeColor}`}
+            className={`navIcon ${homeColor}`}
             onClick={() => window.scrollTo(0, 0)}
           >
             Home
           </div>
           <div
             onClick={() => scrollToRef(aboutRef)}
-            className={`font-fira font-medium text-[15px] cursor-pointer ${aboutColor}`}
+            className={`navIcon ${aboutColor}`}
           >
             About
           </div>
           <div
-            className={`font-fira font-medium text-secondary text-[15px] cursor-pointer ${workColor}`}
+            className={`navIcon ${workColor}`}
             onClick={() => scrollToRef(workRef)}
           >
             Work
           </div>
           <div
-            className={`font-fira font-medium text-secondary text-[15px] cursor-pointer ${contactColor}`}
+            className={`navIcon ${contactColor}`}
             onClick={() => scrollToRef(contactRef)}
           >
             Contact
           </div>
         </div>
 
-        <button className="hidden md:inline text-secondary text-[12px] lg:text-[13px] font-fira border border-secondary p-[6px] lg:p-[10px] rounded-[5px]">
-          Download resume
-        </button>
+        <button className="primaryButton">Download resume</button>
         {/* <a
           href="https://google.com"
           target="_blank"

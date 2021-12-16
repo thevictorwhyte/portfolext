@@ -20,7 +20,7 @@ function Hero() {
           <span className="font-poppins text-secondary text-[24px]">/</span> UI
           & UX Designer
         </span> */}
-        <p className="text-[#8892B0] text-[16px] lg:text-[20px] font-poppins mt-6 w-[80vw] md:w-[60vw] lg:w-fit lg:max-w-xl">
+        <p className="text-[#8892B0] text-[16px] lg:text-[18px] font-poppins mt-6 w-[80vw] md:w-[60vw] lg:w-fit lg:max-w-xl">
           I’m a <span className="text-secondary">design minded</span> full stack
           developer with a focus on creating usable and aesthetically pleasing
           products.
@@ -33,7 +33,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute top-[95%] lg:top-[90%] left-2/4 animate-bounce w-6 h-6 lg:w-8 lg:h-8 ">
+      <div className="absolute top-[95%] lg:top-[90%] left-2/4 animate-bounce w-6 h-6 lg:w-7 lg:h-7 ">
         <Image src="/assets/arrow.svg" layout="fill" objectFit="contain" />
       </div>
     </div>

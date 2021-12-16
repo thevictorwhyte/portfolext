@@ -61,4 +61,12 @@ html {
       rgba(4, 26, 48, 0.63)
     );
   }
+
+  .navIcon {
+    @apply font-fira font-medium text-[15px] cursor-pointer transition duration-200 hover:text-[#CF8387];
+  }
+
+  .primaryButton {
+    @apply text-secondary text-[12px] lg:text-[13px] font-fira border border-secondary p-[6px] lg:p-[10px] rounded-[5px] transition duration-200 hover:bg-tertiary hover:font-semibold;
+  }
 }

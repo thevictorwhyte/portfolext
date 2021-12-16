@@ -11,7 +11,7 @@ function Work({ sectionRef }) {
   return (
     <SectionContainer sectionRef={sectionRef}>
       <SectionHeader>Work</SectionHeader>
-      <h3 className="font-fira text-secondary font-medium text-[20px]">
+      <h3 className="font-fira text-secondary font-medium text-[20px] my-4">
         Featured Projects
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] xl:gap-[40px]">
@@ -53,7 +53,7 @@ function Work({ sectionRef }) {
           UX Case Studies
         </h3>
 
-        <div className="flex space-x-[20px] overflow-scroll lg:space-x-0 lg:overflow-hidden w-full lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-[40px] scrollbar-hide">
+        <div className="flex space-x-[20px] overflow-scroll lg:space-x-0 lg:overflow-visible w-full lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-[40px] scrollbar-hide">
           {uxCaseStudies.map(({ id, title, desc, projectImg, studyUrl }) => (
             <CaseStudy
               key={id}

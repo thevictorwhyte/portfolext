@@ -14,20 +14,34 @@ function About({ sectionRef }) {
     Engineering: {
       text: (
         <p className="font-poppins font-normal text-sm xl:text-md leading-[170%]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis at mi
-          massa nunc rhoncus egestas sapien. Enim dui blandit nullam suscipit.
-          Pharetra, arcu, pharetra, diam at tellus. <br />
+          Other than finishing university with a first calss honours in
+          Electrical/Electronics Engineering, I also posses a plethora of
+          software engineering techniques and skills to deliver solutions
+          efficiently. <br />
           <br />
-          Suspendisse At facilisi lorem aliquet sed. Vitae dictumst dui dui sed
-          venenatis vel. Nullam mauris in porttitor consectetur lacus, maecenas
-          quam. Leo, at a dui euismod. At quis purus pellentesque at massa ac.
+          In developing Javascript applications, I am equipped with a wide range
+          of tolls in both the front and back end ecosytem. Because of a solid
+          understanding of foundational concepts, I am also able to quickly pick
+          up on new tools to help productivity.
         </p>
       ),
       buttonUrl: "https://github.com/thevictorwhyte",
       buttonText: "View Github",
     },
     Design: {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis at mi massa nunc rhoncus egestas sapien. Enim dui blandit nullam suscipit. Pharetra, arcu, pharetra, diam at tellus. Suspendisse At facilisi lorem aliquet sed. Vitae dictumst dui dui sed venenatis vel. Nullam mauris in porttitor consectetur lacus, maecenas quam. Leo, at a dui euismod. At quis purus pellentesque at massa ac.",
+      text: (
+        <p className="font-poppins font-normal text-sm xl:text-md leading-[170%]">
+          It's human instinct to always judge a book by its cover. That is why a
+          product is only as good as how it looks and feels to a user. This was
+          the rason I decided to broaden my knowledge on design principles and
+          techniques to give me an edge in the tech industry. <br />
+          <br />
+          Thanks to the grow with Google foundation, I was able to pursue their
+          Google UX design certification program. I continue to apply the
+          knowlege gained like wire framing and user research into my
+          development and design process.
+        </p>
+      ),
       buttonUrl: "https://github.com/thevictorwhyte",
       buttonText: "View Dribbble",
     },
@@ -78,7 +92,7 @@ function About({ sectionRef }) {
                       target="_blank"
                       className="flex w-fit ml-auto items-center font-poppins text-sm text-[#CF8387] px-4 py-2 cursor-pointer group transition transform duration-200"
                     >
-                      <span className="transition transform group-hover:-translate-x-1">
+                      <span className="transition transform">
                         {posts.buttonText}
                       </span>
                       <FaArrowRight className="inline ml-2 transition transform group-hover:translate-x-1 group-hover:text-color-secondary text-sm" />
@@ -95,6 +109,7 @@ function About({ sectionRef }) {
               src="/assets/my_image.png"
               layout="fill"
               objectFit="contain"
+              className="opacity-[60%] hover:opacity-100 transition duration-200"
             />
           </div>
         </div>
