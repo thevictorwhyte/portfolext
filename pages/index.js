@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 import { FaDribbble, FaGithub, FaLinkedinIn, FaMediumM } from "react-icons/fa";
 import About from "../components/About";
 import Contact from "../components/Contact";
@@ -9,6 +10,7 @@ import Work from "../components/Work";
 import { useRef } from "react";
 
 export default function Home() {
+  const [isToggled, setIsToggled] = useState(true);
   const navRef = useRef(null);
   const aboutRef = useRef(null);
   const workRef = useRef(null);
@@ -25,7 +27,9 @@ export default function Home() {
         workRef={workRef}
         contactRef={contactRef}
       />
-      <main className="w-full xl:max-w-[1440px] flex flex-col mx-auto space-y-[111px]">
+      <main
+        className={`w-full xl:max-w-[1440px] flex flex-col mx-auto space-y-[111px]`}
+      >
         <Hero />
         <About sectionRef={aboutRef} />
         <Work sectionRef={workRef} />

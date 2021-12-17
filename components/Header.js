@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Menu from "./Menu/Menu";
 
 const defaultColor = "text-[#8892B0]";
 const active = "text-secondary";
@@ -65,7 +66,6 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
       ref.current.offsetTop - navRef.current.clientHeight - 10
     );
   };
-  // console.log(workRef);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -125,7 +125,7 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
     <header className="w-full">
       <nav
         ref={navRef}
-        className={`flex items-center px-[20px] lg:px-[30px] py-[15px] justify-between bg-opacity-80 bg-primary backdrop-blur-lg top-0 fixed w-full z-50 ${
+        className={`flex items-center px-[20px] lg:px-[30px] py-[15px] justify-between bg-opacity-80 bg-primary backdrop-blur-lg top-0 fixed w-full z-[40] ${
           isScrolling && " transition transform duration-200 shadow-custom"
         }`}
       >
@@ -133,7 +133,7 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
           variants={logoAndButtonVariant}
           initial="hidden"
           animate="visible"
-          className="relative h-10 w-10 lg:h-12 lg:w-12"
+          className="relative h-10 w-10 lg:h-12 lg:w-12 z-[80]"
         >
           <Image
             src="/assets/logo.svg"
@@ -142,6 +142,10 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
             className="cursor-pointer"
           />
         </motion.div>
+
+        <div className="md:hidden z-[180]">
+          <Menu />
+        </div>
 
         <motion.div
           variants={navContainerVariant}
@@ -198,6 +202,9 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
           </span>
         </a> */}
       </nav>
+      {/* <div className="md:hidden fixed w-[100vw] h-[100vh] z-[50] bg-opacity-50 bg-primary backdrop-blur-lg">
+        <div className="w-[70%] h-[100%] bg-tertiary absolute top-0 right-0"></div>
+      </div> */}
     </header>
   );
 }
