@@ -52,7 +52,7 @@ function About({ sectionRef }) {
     },
   });
   return (
-    <SectionContainer sectionRef={sectionRef}>
+    <SectionContainer amount={0.6} sectionRef={sectionRef}>
       <SectionHeader>About me</SectionHeader>
 
       <div className="flex flex-col md:flex-row md:items-center space-y-[40px] md:space-y-0">

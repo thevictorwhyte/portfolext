@@ -1,9 +1,29 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn, FaDribbble, FaMediumM } from "react-icons/fa";
 
 function Hero() {
+  const containerVariant = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.3,
+        duration: 0.4,
+      },
+    },
+  };
   return (
-    <div className="relative h-screen 2xl:max-h-[1024px] 2xl:max-w-[1440px]">
+    <motion.div
+      variants={containerVariant}
+      animate="visible"
+      initial="hidden"
+      className="relative h-screen 2xl:max-h-[1024px] 2xl:max-w-[1440px]"
+    >
       <div className="absolute pl-[20px] lg:px-[100px] top-1/4">
         <span className="font-fira text-secondary text-[1.25rem]">
           Hi, my name is
@@ -36,7 +56,7 @@ function Hero() {
       <div className="absolute top-[95%] lg:top-[90%] left-2/4 animate-bounce w-6 h-6 lg:w-7 lg:h-7 ">
         <Image src="/assets/arrow.svg" layout="fill" objectFit="contain" />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

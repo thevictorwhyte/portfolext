@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const defaultColor = "text-[#8892B0]";
 const active = "text-secondary";
@@ -74,6 +75,52 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
     };
   }, []);
 
+  const navContainerVariant = {
+    hidden: {
+      y: 0,
+      opacity: 1,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0,
+        delay: 0.7,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const logoAndButtonVariant = {
+    hidden: {
+      y: -50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        delay: 0.3,
+      },
+    },
+  };
+
+  const navItems = {
+    hidden: {
+      y: -10,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
+
   return (
     <header className="w-full">
       <nav
@@ -82,43 +129,64 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
           isScrolling && " transition transform duration-200 shadow-custom"
         }`}
       >
-        <div className="relative h-10 w-10 lg:h-12 lg:w-12">
+        <motion.div
+          variants={logoAndButtonVariant}
+          initial="hidden"
+          animate="visible"
+          className="relative h-10 w-10 lg:h-12 lg:w-12"
+        >
           <Image
             src="/assets/logo.svg"
             layout="fill"
             objectFit="contain"
             className="cursor-pointer"
           />
-        </div>
+        </motion.div>
 
-        <div className=" hidden md:flex md:space-x-[46px] lg:space-x-[86px]">
-          <div
+        <motion.div
+          variants={navContainerVariant}
+          animate="visible"
+          initial="hidden"
+          className=" hidden md:flex md:space-x-[46px] lg:space-x-[86px]"
+        >
+          <motion.div
             className={`navIcon ${homeColor}`}
+            variants={navItems}
             onClick={() => window.scrollTo(0, 0)}
           >
-            Home
-          </div>
-          <div
+            <span className="text-secondary">01. </span>Home
+          </motion.div>
+          <motion.div
             onClick={() => scrollToRef(aboutRef)}
+            variants={navItems}
             className={`navIcon ${aboutColor}`}
           >
-            About
-          </div>
-          <div
+            <span className="text-secondary">02. </span>About
+          </motion.div>
+          <motion.div
             className={`navIcon ${workColor}`}
+            variants={navItems}
             onClick={() => scrollToRef(workRef)}
           >
-            Work
-          </div>
-          <div
+            <span className="text-secondary">03. </span>Work
+          </motion.div>
+          <motion.div
             className={`navIcon ${contactColor}`}
+            variants={navItems}
             onClick={() => scrollToRef(contactRef)}
           >
-            Contact
-          </div>
-        </div>
+            <span className="text-secondary">04. </span>Contact
+          </motion.div>
+        </motion.div>
 
-        <button className="primaryButton">Download resume</button>
+        <motion.button
+          variants={logoAndButtonVariant}
+          initial="hidden"
+          animate="visible"
+          className="hidden md:inline primaryButton"
+        >
+          Download resume
+        </motion.button>
         {/* <a
           href="https://google.com"
           target="_blank"

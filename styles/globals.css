@@ -63,10 +63,10 @@ html {
   }
 
   .navIcon {
-    @apply font-fira font-medium text-[15px] cursor-pointer transition duration-200 hover:text-[#CF8387];
+    @apply font-fira font-medium text-[15px] cursor-pointer transition duration-200 hover:text-secondary;
   }
 
   .primaryButton {
-    @apply text-secondary text-[12px] lg:text-[13px] font-fira border border-secondary p-[6px] lg:p-[10px] rounded-[5px] transition duration-200 hover:bg-tertiary hover:font-semibold;
+    @apply text-secondary text-[12px] lg:text-[13px] font-fira border border-secondary p-[6px] lg:p-[10px] rounded-[5px] transition duration-200 hover:bg-tertiary;
   }
 }

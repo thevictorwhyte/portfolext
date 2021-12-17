@@ -9,7 +9,7 @@ import CaseStudy from "./CaseStudy";
 
 function Work({ sectionRef }) {
   return (
-    <SectionContainer sectionRef={sectionRef}>
+    <SectionContainer amount={0.2} sectionRef={sectionRef}>
       <SectionHeader>Work</SectionHeader>
       <h3 className="font-fira text-secondary font-medium text-[20px] my-4">
         Featured Projects

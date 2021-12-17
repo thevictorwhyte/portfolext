@@ -4,7 +4,7 @@ import SectionHeader from "./SectionHeader";
 
 function Contact({ sectionRef }) {
   return (
-    <SectionContainer sectionRef={sectionRef}>
+    <SectionContainer amount={0.6} sectionRef={sectionRef}>
       <SectionHeader>Contact</SectionHeader>
       <div className="flex flex-col md:flex-row md:justify-between w-full space-y-[20px] md:space-y-0 md:space-x-[40px]">
         <div className="flex flex-col justify-between w-full md:w-[50%]">
