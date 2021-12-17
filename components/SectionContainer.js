@@ -20,7 +20,7 @@ function SectionContainer(props) {
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: props.amount }}
+      viewport={{ once: true, amount: "some" }}
       ref={props.sectionRef}
       className="px-[20px] lg:px-[100px]"
     >
