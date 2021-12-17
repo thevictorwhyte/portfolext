@@ -1,8 +1,29 @@
 import { FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function OtherProject({ title, sourceUrl, liveUrl, desc, ongoing }) {
+  const otherProjectsVariant = {
+    hidden: {
+      y: 20,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        duration: 0.2,
+      },
+    },
+  };
   return (
-    <div className="flex flex-col justify-between h-40 group">
+    <motion.div
+      variants={otherProjectsVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: "some" }}
+      className="flex flex-col justify-between h-40 group"
+    >
       <h4 className="text-whiteone text-[18px] font-poppins font-medium group-hover:text-secondary transition duration-200">
         {title}
 
@@ -21,7 +42,7 @@ function OtherProject({ title, sourceUrl, liveUrl, desc, ongoing }) {
         <span className="transition transform">View demo</span>
         <FaArrowRight className="inline ml-2 transition transform group-hover:translate-x-1 group-hover:text-color-secondary text-sm" />
       </a>
-    </div>
+    </motion.div>
   );
 }
 

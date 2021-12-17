@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaPlayCircle } from "react-icons/fa";
 
 function FeaturedProject({
@@ -9,8 +10,28 @@ function FeaturedProject({
   sourceUrl,
   liveUrl,
 }) {
+  const featuredProjectVariant = {
+    hidden: {
+      y: 20,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        duration: 0.2,
+      },
+    },
+  };
   return (
-    <div className="flex flex-col max-w-[586px] max-h-[678px] p-0 shadow-featuredProject group transition duration-200 hover:-translate-y-2">
+    <motion.div
+      variants={featuredProjectVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: "some" }}
+      className="flex flex-col max-w-[586px] max-h-[678px] p-0 shadow-featuredProject group transition duration-200 hover:-translate-y-2"
+    >
       <div className="relative w-full h-[333px] top-0 left-0 rounded-[10px] overflow-hidden">
         <Image
           src={projectImg}
@@ -43,7 +64,7 @@ function FeaturedProject({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

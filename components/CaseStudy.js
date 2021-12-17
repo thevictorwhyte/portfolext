@@ -1,9 +1,30 @@
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function CaseStudy({ projectImg, desc, title, studyUrl, ongoing = false }) {
+  const caseStudyVariant = {
+    hidden: {
+      y: 20,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        duration: 0.2,
+      },
+    },
+  };
   return (
-    <div className="rounded-[10px] min-w-[70vw] md:min-w-[40vw] lg:min-w-full lg:w-full shadow-featuredProject transition duration-200 hover:-translate-y-2 group cursor-pointer">
+    <div
+      variants={caseStudyVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: "some" }}
+      className="rounded-[10px] min-w-[70vw] md:min-w-[40vw] lg:min-w-full lg:w-full shadow-featuredProject transition duration-200 hover:-translate-y-2 group cursor-pointer"
+    >
       <div className="relative w-full h-56 -z-10 -mb-4 overflow-hidden opacity-60">
         <Image
           src={projectImg}
