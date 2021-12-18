@@ -62,6 +62,7 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
   };
 
   const scrollToRef = (ref) => {
+    toggleMenu(0);
     window.scrollTo(
       0,
       ref.current.offsetTop - navRef.current.clientHeight - 10
@@ -125,9 +126,11 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
   const menuContainerVariant = {
     hidden: {
       opacity: 0,
+      display: "none",
     },
     visible: {
       opacity: isMenuOpen ? 1 : 0,
+      display: isMenuOpen ? "inherit" : "none",
     },
   };
 
