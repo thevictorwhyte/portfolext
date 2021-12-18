@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import Menu from "./Menu/Menu";
 
 const defaultColor = "text-[#8892B0]";
 const active = "text-secondary";
 function Header({ aboutRef, workRef, contactRef, navRef }) {
+  const [isMenuOpen, toggleMenu] = useCycle(false, true);
   const [isScrolling, setIsScrolling] = useState(false);
   const [homeColor, setHomeColour] = useState(active);
   const [aboutColor, setAboutColour] = useState(defaultColor);
@@ -121,6 +122,30 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
     },
   };
 
+  const menuContainerVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: isMenuOpen ? 1 : 0,
+    },
+  };
+
+  const menuSideBar = {
+    hidden: {
+      x: "100vw",
+      opacity: 1,
+    },
+    visible: {
+      x: isMenuOpen ? 0 : "100vw",
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        delay: 0.2,
+      },
+    },
+  };
+
   return (
     <header className="w-full">
       <nav
@@ -129,6 +154,51 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
           isScrolling && " transition transform duration-200 shadow-custom"
         }`}
       >
+        <motion.div
+          variants={menuContainerVariant}
+          initial="hidden"
+          animate="visible"
+          className="md:hidden absolute top-0 left-0 w-[100vw] h-[100vh] z-[30] bg-opacity-50 bg-primary backdrop-blur-lg"
+        >
+          <motion.div
+            variants={menuSideBar}
+            initial="hidden"
+            animate="visible"
+            className="absolute w-[70%] h-[100vh] bg-tertiary top-0 right-0"
+          >
+            <div className="flex flex-col items-center space-y-[40px] mt-[4rem]">
+              <motion.div
+                className={`navIcon ${homeColor}`}
+                variants={navItems}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <span className="text-secondary">01. </span>Home
+              </motion.div>
+              <motion.div
+                onClick={() => scrollToRef(aboutRef)}
+                variants={navItems}
+                className={`navIcon ${aboutColor}`}
+              >
+                <span className="text-secondary">02. </span>About
+              </motion.div>
+              <motion.div
+                className={`navIcon ${workColor}`}
+                variants={navItems}
+                onClick={() => scrollToRef(workRef)}
+              >
+                <span className="text-secondary">03. </span>Work
+              </motion.div>
+              <motion.div
+                className={`navIcon ${contactColor}`}
+                variants={navItems}
+                onClick={() => scrollToRef(contactRef)}
+              >
+                <span className="text-secondary">04. </span>Contact
+              </motion.div>
+            </div>
+          </motion.div>
+        </motion.div>
+
         <motion.div
           variants={logoAndButtonVariant}
           initial="hidden"
@@ -144,7 +214,7 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
         </motion.div>
 
         <div className="md:hidden z-[180]">
-          <Menu />
+          <Menu toggleMenu={toggleMenu} />
         </div>
 
         <motion.div

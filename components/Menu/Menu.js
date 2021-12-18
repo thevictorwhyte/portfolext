@@ -24,13 +24,14 @@ const sidebar = {
   },
 };
 
-const Menu = () => {
+const Menu = ({ toggleMenu }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
 
   const handleToggle = () => {
     console.log("i am being fired");
+    toggleMenu();
     toggleOpen();
   };
 
