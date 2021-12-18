@@ -24,21 +24,20 @@ const sidebar = {
   },
 };
 
-const Menu = ({ toggleMenu }) => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+const Menu = ({ toggleMenu, isMenuOpen }) => {
+  // const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
 
   const handleToggle = () => {
-    console.log("i am being fired");
     toggleMenu();
-    toggleOpen();
+    // toggleOpen();
   };
 
   return (
     <motion.nav
       initial={false}
-      animate={isOpen ? "open" : "closed"}
+      animate={isMenuOpen ? "open" : "closed"}
       //   custom={height}
       ref={containerRef}
     >

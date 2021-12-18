@@ -217,7 +217,7 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
         </motion.div>
 
         <div className="md:hidden z-[180]">
-          <Menu toggleMenu={toggleMenu} />
+          <Menu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         </div>
 
         <motion.div
