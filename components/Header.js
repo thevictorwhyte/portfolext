@@ -173,7 +173,10 @@ function Header({ aboutRef, workRef, contactRef, navRef }) {
               <motion.div
                 className={`navIcon ${homeColor}`}
                 variants={navItems}
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={() => {
+                  toggleMenu(0);
+                  window.scrollTo(0, 0);
+                }}
               >
                 <span className="text-secondary">01. </span>Home
               </motion.div>
