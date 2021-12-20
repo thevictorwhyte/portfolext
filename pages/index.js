@@ -6,11 +6,14 @@ import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Work from "../components/Work";
+import VideoModal from "../components/VideoModal";
+
+import ModalContext from "../contexts/modal.context";
 
 import { useRef } from "react";
 
 export default function Home() {
-  const [isToggled, setIsToggled] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navRef = useRef(null);
   const aboutRef = useRef(null);
   const workRef = useRef(null);
@@ -32,8 +35,12 @@ export default function Home() {
       >
         <Hero />
         <About sectionRef={aboutRef} />
-        <Work sectionRef={workRef} />
+        <Work sectionRef={workRef} setIsModalOpen={setIsModalOpen} />
         <Contact sectionRef={contactRef} />
+        {/* <ModalContext.Provider>
+          <VideoModal />
+        </ModalContext.Provider> */}
+        <VideoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       </main>
 
       <footer className="mt-[80px] pb-[20px]">

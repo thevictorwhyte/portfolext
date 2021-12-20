@@ -7,7 +7,7 @@ import OtherProject from "./OtherProject";
 import uxCaseStudies from "../content/projects/uxCaseStudies";
 import CaseStudy from "./CaseStudy";
 
-function Work({ sectionRef }) {
+function Work({ sectionRef, setIsModalOpen }) {
   return (
     <SectionContainer amount={0.2} sectionRef={sectionRef}>
       <SectionHeader>Work</SectionHeader>
@@ -25,6 +25,7 @@ function Work({ sectionRef }) {
               desc={desc}
               sourceUrl={sourceUrl}
               liveUrl={liveUrl}
+              setIsModalOpen={setIsModalOpen}
             />
           )
         )}

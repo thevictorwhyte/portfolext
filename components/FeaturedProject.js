@@ -9,7 +9,11 @@ function FeaturedProject({
   techUsed,
   sourceUrl,
   liveUrl,
+  setIsModalOpen,
 }) {
+  const handlePlay = () => {
+    setIsModalOpen(true);
+  };
   const featuredProjectVariant = {
     hidden: {
       y: 20,
@@ -39,7 +43,10 @@ function FeaturedProject({
           objectFit="cover"
           className="opacity-[60%] group-hover:opacity-100 transition duration-200"
         />
-        <FaPlayCircle className="absolute top-1/2 left-1/2 h-16 w-16 translate-x-[-50%] translate-y-[-50%] text-primary opacity-[80%] transition duration-200 cursor-pointer hover:opacity-[100%]" />
+        <FaPlayCircle
+          onClick={handlePlay}
+          className="absolute top-1/2 left-1/2 h-16 w-16 translate-x-[-50%] translate-y-[-50%] text-primary opacity-[80%] transition duration-200 cursor-pointer hover:opacity-[100%]"
+        />
       </div>
       <div className="flex flex-col h-64 bg-[#05203C] px-4 py-6 lg:px-[30px] lg:py-[24px] rounded-[10px] overflow-hidden -mt-6 z-10">
         <div className="flex flex-col space-y-[20px] lg:space-y-[20px]">
