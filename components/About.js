@@ -108,6 +108,7 @@ function About({ sectionRef }) {
             <Image
               src="/assets/my_image.png"
               layout="fill"
+              loading="eager"
               objectFit="contain"
               className="opacity-[60%] hover:opacity-100 transition duration-200"
             />
