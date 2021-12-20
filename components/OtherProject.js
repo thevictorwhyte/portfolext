@@ -39,7 +39,7 @@ function OtherProject({ title, sourceUrl, liveUrl, desc, ongoing }) {
         target="_blank"
         className="flex w-fit items-center font-poppins text-sm text-[#CF8387] py-2 cursor-pointer group transition transform duration-200"
       >
-        <span className="transition transform">View demo</span>
+        <span className="transition transform">View github</span>
         <FaArrowRight className="inline ml-2 transition transform group-hover:translate-x-1 group-hover:text-color-secondary text-sm" />
       </a>
     </motion.div>

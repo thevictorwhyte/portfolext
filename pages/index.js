@@ -8,8 +8,6 @@ import Hero from "../components/Hero";
 import Work from "../components/Work";
 import VideoModal from "../components/VideoModal";
 
-import ModalContext from "../contexts/modal.context";
-
 import { useRef } from "react";
 
 export default function Home() {
@@ -18,6 +16,7 @@ export default function Home() {
   const aboutRef = useRef(null);
   const workRef = useRef(null);
   const contactRef = useRef(null);
+  const sidebarRef = useRef(null);
   return (
     <div className="">
       <Head>
@@ -29,6 +28,7 @@ export default function Home() {
         aboutRef={aboutRef}
         workRef={workRef}
         contactRef={contactRef}
+        sidebarRef={sidebarRef}
       />
       <main
         className={`w-full xl:max-w-[1440px] flex flex-col mx-auto space-y-[111px]`}

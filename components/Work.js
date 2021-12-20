@@ -11,7 +11,7 @@ function Work({ sectionRef, setIsModalOpen }) {
   return (
     <SectionContainer amount={0.2} sectionRef={sectionRef}>
       <SectionHeader>Work</SectionHeader>
-      <h3 className="font-fira text-secondary font-medium text-[20px] my-4">
+      <h3 className="font-fira text-secondary font-medium text-sm lg:text-[20px] my-4">
         Featured Projects
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] xl:gap-[40px]">

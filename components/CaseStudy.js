@@ -18,7 +18,7 @@ function CaseStudy({ projectImg, desc, title, studyUrl, ongoing = false }) {
     },
   };
   return (
-    <div
+    <motion.div
       variants={caseStudyVariant}
       initial="hidden"
       whileInView="visible"
@@ -53,7 +53,7 @@ function CaseStudy({ projectImg, desc, title, studyUrl, ongoing = false }) {
           <FaArrowRight className="inline ml-2 transition transform group-hover:translate-x-1 group-hover:text-color-secondary text-xs" />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
