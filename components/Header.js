@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import Menu from "./Menu/Menu";
 import useOnClickOutside from "../hooks/useOnClickOutside";
@@ -13,6 +13,7 @@ function Header({ aboutRef, workRef, contactRef, navRef, sidebarRef }) {
   const [aboutColor, setAboutColour] = useState(defaultColor);
   const [workColor, setWorkColor] = useState(defaultColor);
   const [contactColor, setContactColor] = useState(defaultColor);
+  const menuToggleRef = useRef(null);
 
   const handleScroll = () => {
     setIsScrolling(window.pageYOffset > 50);
@@ -62,7 +63,7 @@ function Header({ aboutRef, workRef, contactRef, navRef, sidebarRef }) {
     }
   };
 
-  useOnClickOutside(sidebarRef, () => toggleMenu(0));
+  useOnClickOutside([sidebarRef, menuToggleRef], () => toggleMenu(0));
 
   const scrollToRef = (ref) => {
     toggleMenu(0);
@@ -231,6 +232,7 @@ function Header({ aboutRef, workRef, contactRef, navRef, sidebarRef }) {
           initial="hidden"
           animate="visible"
           className="md:hidden z-[180]"
+          ref={menuToggleRef}
         >
           <Menu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         </motion.div>
