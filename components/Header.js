@@ -228,7 +228,7 @@ function Header({ aboutRef, workRef, contactRef, navRef, sidebarRef }) {
         </motion.div>
 
         <motion.div
-          variant={logoAndButtonVariant}
+          variants={logoAndButtonVariant}
           initial="hidden"
           animate="visible"
           className="md:hidden z-[180]"
