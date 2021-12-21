@@ -13,17 +13,24 @@ function About({ sectionRef }) {
   let [categories] = useState({
     Engineering: {
       text: (
-        <p className="font-poppins font-normal text-sm xl:text-md leading-[170%]">
-          Other than finishing university with a first calss honours in
-          Electrical/Electronics Engineering, I also posses a plethora of
-          software engineering techniques and skills to deliver solutions
-          efficiently. <br />
+        <div className="font-poppins font-normal text-whitetwo text-sm xl:text-md leading-[170%]">
+          <p>
+            Hello! My name is Victor Whyte and I am a fullstack engineer with a
+            deep understanding of UI/UX design. My interest started back in 2016
+            when I commenced my Electrical/Electronics Engineering degree
+            program where I made friends with people in the Computer science
+            department. Although I graduated with a first class honours, I have
+            since chosen to focus on software engineering and building
+            functional applications for web and mobile.
+          </p>
           <br />
-          In developing Javascript applications, I am equipped with a wide range
-          of tolls in both the front and back end ecosytem. Because of a solid
-          understanding of foundational concepts, I am also able to quickly pick
-          up on new tools to help productivity.
-        </p>
+          <p>
+            In developing Javascript applications, I am equipped with a wide
+            range of tools in both the front and back end ecosytem. Because of a
+            solid understanding of foundational concepts, I am also able to
+            quickly pick up on new tools to help productivity.
+          </p>
+        </div>
       ),
       buttonUrl: "https://github.com/thevictorwhyte",
       buttonText: "View Github",
@@ -33,21 +40,56 @@ function About({ sectionRef }) {
         <p className="font-poppins font-normal text-sm xl:text-md leading-[170%]">
           It's human instinct to always judge a book by its cover. That is why a
           product is only as good as how it looks and feels to a user. This was
-          the rason I decided to broaden my knowledge on design principles and
+          the reason I decided to broaden my knowledge on design principles and
           techniques to give me an edge in the tech industry. <br />
           <br />
-          Thanks to the grow with Google foundation, I was able to pursue their
-          Google UX design certification program. I continue to apply the
-          knowlege gained like wire framing and user research into my
-          development and design process.
+          Thanks to the grow with Google foundation, I was able to pursue a
+          Google UX design certification. I continue to apply the knowledge
+          gained during the period of the program, e.g. wire framing and user
+          research, into my development and design process.
         </p>
       ),
-      buttonUrl: "https://github.com/thevictorwhyte",
+      buttonUrl: "https://dribbble.com/thevictorwhyte",
       buttonText: "View Dribbble",
     },
     Skills: {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis at mi massa nunc rhoncus egestas sapien. Enim dui blandit nullam suscipit. Pharetra, arcu, pharetra, diam at tellus. Suspendisse At facilisi lorem aliquet sed. Vitae dictumst dui dui sed venenatis vel. Nullam mauris in porttitor consectetur lacus, maecenas quam. Leo, at a dui euismod. At quis purus pellentesque at massa ac.",
-      buttonUrl: "https://github.com/thevictorwhyte",
+      text: (
+        <div className="font-poppins font-normal text-whitetwo text-md xl:text-md leading-[170%] flex justify-between">
+          <div>
+            <span className="font-fira text-secondary">Front-end</span>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>ReactJs</li>
+              <li>React Native</li>
+            </ul>
+          </div>
+
+          <div>
+            <span className="font-fira text-secondary">Back-end:</span>
+            <ul>
+              <li>Node</li>
+              <li>Express</li>
+              <li>Firebase</li>
+              <li>GraphQL</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+
+          <div>
+            <span className="font-fira text-secondary">Design & Tools:</span>
+            <ul>
+              <li>Figma</li>
+              <li>Heroku</li>
+              <li>Vercel</li>
+              <li>UX design</li>
+              <li>Product design</li>
+            </ul>
+          </div>
+        </div>
+      ),
+      buttonUrl: "https://www.linkedin.com/in/thevictorwhyte/",
       buttonText: "View LinkedIn",
     },
   });

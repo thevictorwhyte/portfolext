@@ -42,7 +42,7 @@ function Hero() {
         </span> */}
         <p className="text-[#8892B0] text-[16px] lg:text-[18px] font-poppins mt-6 w-[80vw] md:w-[60vw] lg:w-fit lg:max-w-xl">
           I’m a <span className="text-secondary">design minded</span> full stack
-          developer with a focus on creating usable and aesthetically pleasing
+          engineer with a focus on creating usable and aesthetically pleasing
           products.
         </p>
         <div className="flex space-x-4 mt-10">
