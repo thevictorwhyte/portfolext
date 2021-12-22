@@ -23,7 +23,7 @@ function CaseStudy({ projectImg, desc, title, studyUrl, ongoing = false }) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: "some" }}
-      className="rounded-[10px] min-w-[70vw] md:min-w-[40vw] lg:min-w-full lg:w-full shadow-featuredProject transition duration-200 lg:hover:-translate-y-2 group cursor-pointer"
+      className="rounded-[10px] min-w-[70vw] md:min-w-[40vw] lg:min-w-full lg:w-full shadow-featuredProject transition duration-200 lg:hover:-translate-y-2 group"
     >
       <div className="relative w-full h-56 -z-10 -mb-4 overflow-hidden opacity-60">
         <Image

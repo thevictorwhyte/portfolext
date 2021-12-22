@@ -46,10 +46,18 @@ function Hero() {
           products.
         </p>
         <div className="flex space-x-4 mt-10">
-          <FaGithub className="icon" />
-          <FaLinkedinIn className="icon" />
-          <FaDribbble className="icon" />
-          <FaMediumM className="icon" />
+          <a href="https://github.com/thevictorwhyte" target="_blank">
+            <FaGithub className="icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/thevictorwhyte/" target="_blank">
+            <FaLinkedinIn className="icon" />
+          </a>
+          <a href="https://dribbble.com/thevictorwhyte" target="_blank">
+            <FaDribbble className="icon" />
+          </a>
+          <a href="https://thevictorwhyte.medium.com/" target="_blank">
+            <FaMediumM className="icon" />
+          </a>
         </div>
       </div>
 

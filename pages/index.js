@@ -12,6 +12,7 @@ import { useRef } from "react";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [embedId, setEmbedId] = useState("");
   const navRef = useRef(null);
   const aboutRef = useRef(null);
   const workRef = useRef(null);
@@ -35,12 +36,18 @@ export default function Home() {
       >
         <Hero />
         <About sectionRef={aboutRef} />
-        <Work sectionRef={workRef} setIsModalOpen={setIsModalOpen} />
+        <Work
+          sectionRef={workRef}
+          setIsModalOpen={setIsModalOpen}
+          setEmbedId={setEmbedId}
+        />
         <Contact sectionRef={contactRef} />
-        {/* <ModalContext.Provider>
-          <VideoModal />
-        </ModalContext.Provider> */}
-        <VideoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+
+        <VideoModal
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          embedId={embedId}
+        />
       </main>
 
       <footer className="mt-[80px] pb-[20px]">
@@ -50,10 +57,21 @@ export default function Home() {
             <span className="text-secondary">Whyte</span>
           </h4>
           <div className="flex space-x-4">
-            <FaGithub className="icon" />
-            <FaLinkedinIn className="icon" />
-            <FaDribbble className="icon" />
-            <FaMediumM className="icon" />
+            <a href="https://github.com/thevictorwhyte" target="_blank">
+              <FaGithub className="icon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/thevictorwhyte/"
+              target="_blank"
+            >
+              <FaLinkedinIn className="icon" />
+            </a>
+            <a href="https://dribbble.com/thevictorwhyte" target="_blank">
+              <FaDribbble className="icon" />
+            </a>
+            <a href="https://thevictorwhyte.medium.com/" target="_blank">
+              <FaMediumM className="icon" />
+            </a>
           </div>
         </div>
       </footer>

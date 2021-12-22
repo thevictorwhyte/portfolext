@@ -7,7 +7,7 @@ import OtherProject from "./OtherProject";
 import uxCaseStudies from "../content/projects/uxCaseStudies";
 import CaseStudy from "./CaseStudy";
 
-function Work({ sectionRef, setIsModalOpen }) {
+function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
   return (
     <SectionContainer amount={0.2} sectionRef={sectionRef}>
       <SectionHeader>Work</SectionHeader>
@@ -16,7 +16,16 @@ function Work({ sectionRef, setIsModalOpen }) {
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] xl:gap-[40px]">
         {featuredProjects.map(
-          ({ id, techUsed, title, projectImg, desc, sourceUrl, liveUrl }) => (
+          ({
+            id,
+            techUsed,
+            title,
+            projectImg,
+            desc,
+            sourceUrl,
+            liveUrl,
+            embedId,
+          }) => (
             <FeaturedProject
               key={id}
               techUsed={techUsed}
@@ -26,6 +35,8 @@ function Work({ sectionRef, setIsModalOpen }) {
               sourceUrl={sourceUrl}
               liveUrl={liveUrl}
               setIsModalOpen={setIsModalOpen}
+              setEmbedId={setEmbedId}
+              embedId={embedId}
             />
           )
         )}

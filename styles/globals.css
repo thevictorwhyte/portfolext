@@ -51,7 +51,7 @@ html {
 
 @layer components {
   .icon {
-    @apply text-[#C4C4C4] cursor-pointer;
+    @apply text-whiteone cursor-pointer hover:text-whitetwo transition duration-200;
   }
 
   .background {

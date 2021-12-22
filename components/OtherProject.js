@@ -1,7 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-function OtherProject({ title, sourceUrl, liveUrl, desc, ongoing }) {
+function OtherProject({ title, sourceUrl, desc, ongoing }) {
   const otherProjectsVariant = {
     hidden: {
       y: 20,

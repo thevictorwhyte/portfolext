@@ -10,9 +10,12 @@ function FeaturedProject({
   sourceUrl,
   liveUrl,
   setIsModalOpen,
+  embedId,
+  setEmbedId,
 }) {
   const handlePlay = () => {
     setIsModalOpen(true);
+    setEmbedId(embedId);
   };
   const featuredProjectVariant = {
     hidden: {
@@ -53,7 +56,7 @@ function FeaturedProject({
           <h4 className="text-whiteone text-[16px] xl:text-[18px] font-poppins font-semibold group-hover:text-secondary transition duration-200">
             {title}
           </h4>
-          <p className="text-whitetwo font-poppins text-[13px] lg:text-[14px] xl:text-[16px] font-medium">
+          <p className="text-whitetwo font-poppins text-[13px] lg:text-[14px] xl:text-[16px] font-normal">
             {desc}
           </p>
           <span className="font-fira text-secondary font-medium text-xs lg:text-[13px] xl:text-[16px] mt-4 lg:mt-0">
@@ -61,14 +64,22 @@ function FeaturedProject({
           </span>
         </div>
         <div className="flex justify-between mt-auto">
-          <div className="flex items-center text-whiteone font-fira space-x-2 hover:text-[#CF8387] transition duration-200 cursor-pointer">
+          <a
+            href={sourceUrl}
+            target="_blank"
+            className="flex items-center text-whiteone font-fira space-x-2 hover:text-[#CF8387] transition duration-200 cursor-pointer"
+          >
             <FaGithub className="" />
             <span className="text-sm">Source</span>
-          </div>
-          <div className="flex items-center text-whiteone font-fira space-x-2 hover:text-[#CF8387] transition duration-200 cursor-pointer">
+          </a>
+          <a
+            href={liveUrl}
+            target="_blank"
+            className="flex items-center text-whiteone font-fira space-x-2 hover:text-[#CF8387] transition duration-200 cursor-pointer"
+          >
             <FaExternalLinkAlt className="" />
             <span className="text-sm">Live</span>
-          </div>
+          </a>
         </div>
       </div>
     </motion.div>

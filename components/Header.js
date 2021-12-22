@@ -221,6 +221,7 @@ function Header({ aboutRef, workRef, contactRef, navRef, sidebarRef }) {
         >
           <Image
             src="/assets/logo.svg"
+            loading="eager"
             layout="fill"
             objectFit="contain"
             className="cursor-pointer"
@@ -281,20 +282,7 @@ function Header({ aboutRef, workRef, contactRef, navRef, sidebarRef }) {
         >
           Download resume
         </motion.button>
-        {/* <a
-          href="https://google.com"
-          target="_blank"
-          class="rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-secondary text-secondary"
-        >
-          <span class="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-secondary top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <span class=" font-fira text-sm relative text-secondary transition duration-300 group-hover:text-white ease">
-            Download resume
-          </span>
-        </a> */}
       </nav>
-      {/* <div className="md:hidden fixed w-[100vw] h-[100vh] z-[50] bg-opacity-50 bg-primary backdrop-blur-lg">
-        <div className="w-[70%] h-[100%] bg-tertiary absolute top-0 right-0"></div>
-      </div> */}
     </header>
   );
 }
