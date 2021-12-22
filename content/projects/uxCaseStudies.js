@@ -17,7 +17,7 @@ const uxCaseStudies = [
   {
     id: 3,
     title: "Haven",
-    projectImg: "/assets/caseStudyImages/Haven.png",
+    projectImg: "/assets/caseStudyImages/haven.png",
     desc: "Find apartments and home around you, reserve your date and make payment. ",
     studyUrl: "https://victorwhyte.webflow.io/work/haven",
   },
