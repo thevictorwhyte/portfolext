@@ -207,7 +207,13 @@ function Header({ aboutRef, workRef, contactRef, navRef, sidebarRef }) {
                 <span className="text-secondary">04. </span>Contact
               </motion.div>
 
-              <button className="primaryButton">Download resume</button>
+              <a
+                href="https://drive.google.com/file/d/1vGWckuZ_VesAwTf1RsslsSB9eldwgw_L/view?usp=sharing"
+                target="_blank"
+                className="primaryButton"
+              >
+                Download resume
+              </a>
             </div>
           </motion.div>
         </motion.div>
@@ -274,14 +280,16 @@ function Header({ aboutRef, workRef, contactRef, navRef, sidebarRef }) {
           </motion.div>
         </motion.div>
 
-        <motion.button
+        <motion.a
           variants={logoAndButtonVariant}
           initial="hidden"
           animate="visible"
           className="hidden md:inline primaryButton"
+          href="https://drive.google.com/file/d/1vGWckuZ_VesAwTf1RsslsSB9eldwgw_L/view?usp=sharing"
+          target="_blank"
         >
           Download resume
-        </motion.button>
+        </motion.a>
       </nav>
     </header>
   );
