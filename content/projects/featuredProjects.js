@@ -7,6 +7,7 @@ const featuredProjects = [
     techUsed: "Next.Js Tailwind Firebase Vercel",
     sourceUrl: "https://github.com/thevictorwhyte/twitter-clone",
     liveUrl: "https://twitter-clone-whyte.vercel.app/",
+    embedId: "gk9QH2RhK1o",
   },
 
   {
@@ -27,6 +28,7 @@ const featuredProjects = [
     techUsed: "Next.Js Tailwind Mapbox Vercel",
     sourceUrl: "https://github.com/thevictorwhyte/airbnb-clone",
     liveUrl: "https://airbnb-clone-whyte.vercel.app/",
+    embedId: "LXnEbLQy9JM",
   },
   {
     id: 4,
