@@ -41,7 +41,8 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
           )
         )}
       </div>
-      <div className="mt-[40px]">
+
+      <div className="mt-[60px]">
         <h3 className="font-fira text-secondary font-medium text-[20px] my-4">
           Other Projects
         </h3>
@@ -60,7 +61,8 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
           )}
         </div>
       </div>
-      <div className="mt-[40px] w-full">
+
+      <div className="mt-[60px] w-full">
         <h3 className="font-fira text-secondary font-medium text-[20px] my-4">
           UX Case Studies
         </h3>

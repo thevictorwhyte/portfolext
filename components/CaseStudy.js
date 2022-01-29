@@ -23,14 +23,14 @@ function CaseStudy({ projectImg, desc, title, studyUrl, ongoing = false }) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: "some" }}
-      className="rounded-[10px] min-w-[70vw] md:min-w-[40vw] lg:min-w-full lg:w-full shadow-featuredProject transition duration-200 lg:hover:-translate-y-2 group"
+      className="rounded-[10px] overflow-hidden min-w-[70vw] md:min-w-[40vw] lg:min-w-full lg:w-full shadow-featuredProject transition duration-200 lg:hover:-translate-y-2 group"
     >
       <div className="relative w-full h-56 -z-10 -mb-4 overflow-hidden opacity-60">
         <Image
           src={projectImg}
           layout="fill"
           objectFit="cover"
-          className="rounded-[10px] opacity-[60%] group-hover:opacity-100 transition duration-200"
+          className="group-hover:scale-105 transition duration-200"
         />
       </div>
       <div className="flex flex-col space-y-2 bg-tertiary rounded-[10px] px-4 py-2">

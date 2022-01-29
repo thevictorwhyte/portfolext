@@ -44,7 +44,7 @@ function FeaturedProject({
           src={projectImg}
           layout="fill"
           objectFit="cover"
-          className="opacity-[60%] group-hover:opacity-100 transition duration-200"
+          className="group-hover:scale-105 transition duration-200"
         />
         <FaPlayCircle
           onClick={handlePlay}
