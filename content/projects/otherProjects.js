@@ -1,5 +1,4 @@
-const otherProjects = [
-  {
+const otherProjects = [{
     id: 1,
     title: "Ride",
     desc: "Car booking IOS application made with react native. Other technologies used includes socket.io, express, etc",
@@ -8,9 +7,9 @@ const otherProjects = [
   },
   {
     id: 2,
-    title: "Ultima",
-    desc: "Automated Trading Robot built with MQL4. Recorded an account increase of 50% on back test.",
-    sourceUrl: "https://github.com/thevictorwhyte/ultima",
+    title: "Smart Brain",
+    desc: "A face detection software. Equipped with user authentication and a ranking system",
+    sourceUrl: "https://github.com/thevictorwhyte/smart-brain",
     ongoing: false,
   },
   {
