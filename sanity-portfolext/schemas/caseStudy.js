@@ -1,6 +1,6 @@
 export default {
-    name: 'uxCaseStudies',
-    title: 'UX Case Studies',
+    name: 'uxCaseStudie',
+    title: 'UX Case Studie',
     type: 'document',
     fields: [{
             name: 'image',

@@ -1,6 +1,6 @@
 export default {
-    name: 'featuredProjects',
-    title: 'Featured Projects',
+    name: 'featuredProject',
+    title: 'Featured Project',
     type: 'document',
     fields: [{
             name: 'image',
