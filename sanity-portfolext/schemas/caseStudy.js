@@ -1,5 +1,5 @@
 export default {
-    name: 'uxCaseStudie',
+    name: 'uxCaseStudy',
     title: 'UX Case Studie',
     type: 'document',
     fields: [{
