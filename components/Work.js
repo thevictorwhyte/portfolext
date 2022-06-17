@@ -1,13 +1,16 @@
-import SectionContainer from "./SectionContainer";
-import SectionHeader from "./SectionHeader";
-import featuredProjects from "../content/projects/featuredProjects";
-import FeaturedProject from "./FeaturedProject";
-import otherProjects from "../content/projects/otherProjects";
-import OtherProject from "./OtherProject";
-import uxCaseStudies from "../content/projects/uxCaseStudies";
-import CaseStudy from "./CaseStudy";
+import SectionContainer from './SectionContainer'
+import SectionHeader from './SectionHeader'
+// import featuredProjects from "../content/projects/featuredProjects";
+import FeaturedProject from './FeaturedProject'
+import otherProjects from '../content/projects/otherProjects'
+import OtherProject from './OtherProject'
+import uxCaseStudies from '../content/projects/uxCaseStudies'
+import CaseStudy from './CaseStudy'
 
-function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
+import { urlFor } from '../lib/client'
+
+function Work({ sectionRef, setIsModalOpen, setEmbedId, projects }) {
+  const { featuredProjects } = projects
   return (
     <SectionContainer amount={0.2} sectionRef={sectionRef}>
       <SectionHeader>Work</SectionHeader>
@@ -17,20 +20,20 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] xl:gap-[40px]">
         {featuredProjects.map(
           ({
-            id,
+            _id,
             techUsed,
             title,
-            projectImg,
+            image,
             desc,
             sourceUrl,
             liveUrl,
             embedId,
           }) => (
             <FeaturedProject
-              key={id}
+              key={_id}
               techUsed={techUsed}
               title={title}
-              projectImg={projectImg}
+              projectImg={urlFor(image).url()}
               desc={desc}
               sourceUrl={sourceUrl}
               liveUrl={liveUrl}
@@ -38,7 +41,7 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
               setEmbedId={setEmbedId}
               embedId={embedId}
             />
-          )
+          ),
         )}
       </div>
 
@@ -57,7 +60,7 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
                 sourceUrl={sourceUrl}
                 liveUrl={liveUrl}
               />
-            )
+            ),
           )}
         </div>
       </div>
@@ -80,7 +83,7 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
         </div>
       </div>
     </SectionContainer>
-  );
+  )
 }
 
-export default Work;
+export default Work
