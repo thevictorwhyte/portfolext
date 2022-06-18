@@ -12,7 +12,7 @@ import VideoModal from "../components/VideoModal";
 import { client } from "../lib/client";
 import { useRef } from "react";
 
-const Home = ({ featuredProjects }) => {
+const Home = ({ featuredProjects, otherProjects, uxCaseStudies }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [embedId, setEmbedId] = useState("");
   const navRef = useRef(null);
@@ -40,7 +40,7 @@ const Home = ({ featuredProjects }) => {
         <Hero />
         <About sectionRef={aboutRef} />
         <Work
-          projects={{ featuredProjects }}
+          projects={{ featuredProjects, otherProjects, uxCaseStudies }}
           sectionRef={workRef}
           setIsModalOpen={setIsModalOpen}
           setEmbedId={setEmbedId}
@@ -86,10 +86,15 @@ const Home = ({ featuredProjects }) => {
 export const getServerSideProps = async () => {
   const featuredProjectsQuery =
     '*[_type == "featuredProject"] | order(orderNum asc)';
+  const otherProjectsQuery = '*[_type == "otherProject"] | order(orderNum asc)';
+  const caseStudiesQuery = '*[_type == "uxCaseStudy"] | order(orderNum asc)';
+
   const featuredProjects = await client.fetch(featuredProjectsQuery);
+  const otherProjects = await client.fetch(otherProjectsQuery);
+  const uxCaseStudies = await client.fetch(caseStudiesQuery);
 
   return {
-    props: { featuredProjects },
+    props: { featuredProjects, otherProjects, uxCaseStudies },
   };
 };
 
