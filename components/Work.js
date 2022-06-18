@@ -1,10 +1,7 @@
 import SectionContainer from "./SectionContainer";
 import SectionHeader from "./SectionHeader";
-// import featuredProjects from "../content/projects/featuredProjects";
 import FeaturedProject from "./FeaturedProject";
-// import otherProjects from '../content/projects/otherProjects'
 import OtherProject from "./OtherProject";
-// import uxCaseStudies from '../content/projects/uxCaseStudies'
 import CaseStudy from "./CaseStudy";
 
 import { urlFor } from "../lib/client";
