@@ -1,13 +1,13 @@
 import SectionContainer from "./SectionContainer";
 import SectionHeader from "./SectionHeader";
-import featuredProjects from "../content/projects/featuredProjects";
 import FeaturedProject from "./FeaturedProject";
-import otherProjects from "../content/projects/otherProjects";
 import OtherProject from "./OtherProject";
-import uxCaseStudies from "../content/projects/uxCaseStudies";
 import CaseStudy from "./CaseStudy";
 
-function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
+import { urlFor } from "../lib/client";
+
+function Work({ sectionRef, setIsModalOpen, setEmbedId, projects }) {
+  const { featuredProjects, otherProjects, uxCaseStudies } = projects;
   return (
     <SectionContainer amount={0.2} sectionRef={sectionRef}>
       <SectionHeader>Work</SectionHeader>
@@ -17,20 +17,20 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] xl:gap-[40px]">
         {featuredProjects.map(
           ({
-            id,
+            _id,
             techUsed,
             title,
-            projectImg,
+            image,
             desc,
             sourceUrl,
             liveUrl,
             embedId,
           }) => (
             <FeaturedProject
-              key={id}
+              key={_id}
               techUsed={techUsed}
               title={title}
-              projectImg={projectImg}
+              projectImg={urlFor(image).url()}
               desc={desc}
               sourceUrl={sourceUrl}
               liveUrl={liveUrl}
@@ -47,18 +47,15 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
           Other Projects
         </h3>
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-[40px] xs:gap-[20px] xl:gap-[40px]">
-          {otherProjects.map(
-            ({ id, title, desc, ongoing, sourceUrl, liveUrl }) => (
-              <OtherProject
-                key={id}
-                title={title}
-                desc={desc}
-                ongoing={ongoing}
-                sourceUrl={sourceUrl}
-                liveUrl={liveUrl}
-              />
-            )
-          )}
+          {otherProjects.map(({ _id, title, desc, ongoing, sourceUrl }) => (
+            <OtherProject
+              key={_id}
+              title={title}
+              desc={desc}
+              ongoing={ongoing}
+              sourceUrl={sourceUrl}
+            />
+          ))}
         </div>
       </div>
 
@@ -68,12 +65,12 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId }) {
         </h3>
 
         <div className="flex space-x-[20px] overflow-scroll lg:space-x-0 lg:overflow-visible w-full lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-[40px] scrollbar-hide">
-          {uxCaseStudies.map(({ id, title, desc, projectImg, studyUrl }) => (
+          {uxCaseStudies.map(({ _id, title, desc, image, studyUrl }) => (
             <CaseStudy
-              key={id}
+              key={_id}
               title={title}
               desc={desc}
-              projectImg={projectImg}
+              projectImg={urlFor(image).url()}
               studyUrl={studyUrl}
             />
           ))}

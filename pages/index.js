@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { FaDribbble, FaGithub, FaLinkedinIn, FaMediumM } from "react-icons/fa";
+
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
@@ -8,9 +9,10 @@ import Hero from "../components/Hero";
 import Work from "../components/Work";
 import VideoModal from "../components/VideoModal";
 
+import { client } from "../lib/client";
 import { useRef } from "react";
 
-export default function Home() {
+const Home = ({ featuredProjects, otherProjects, uxCaseStudies }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [embedId, setEmbedId] = useState("");
   const navRef = useRef(null);
@@ -18,6 +20,7 @@ export default function Home() {
   const workRef = useRef(null);
   const contactRef = useRef(null);
   const sidebarRef = useRef(null);
+
   return (
     <div className="">
       <Head>
@@ -37,6 +40,7 @@ export default function Home() {
         <Hero />
         <About sectionRef={aboutRef} />
         <Work
+          projects={{ featuredProjects, otherProjects, uxCaseStudies }}
           sectionRef={workRef}
           setIsModalOpen={setIsModalOpen}
           setEmbedId={setEmbedId}
@@ -77,4 +81,21 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export const getServerSideProps = async () => {
+  const featuredProjectsQuery =
+    '*[_type == "featuredProject"] | order(orderNum asc)';
+  const otherProjectsQuery = '*[_type == "otherProject"] | order(orderNum asc)';
+  const caseStudiesQuery = '*[_type == "uxCaseStudy"] | order(orderNum asc)';
+
+  const featuredProjects = await client.fetch(featuredProjectsQuery);
+  const otherProjects = await client.fetch(otherProjectsQuery);
+  const uxCaseStudies = await client.fetch(caseStudiesQuery);
+
+  return {
+    props: { featuredProjects, otherProjects, uxCaseStudies },
+  };
+};
+
+export default Home;
