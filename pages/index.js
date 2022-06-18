@@ -1,25 +1,25 @@
-import Head from 'next/head'
-import { useState } from 'react'
-import { FaDribbble, FaGithub, FaLinkedinIn, FaMediumM } from 'react-icons/fa'
+import Head from "next/head";
+import { useState } from "react";
+import { FaDribbble, FaGithub, FaLinkedinIn, FaMediumM } from "react-icons/fa";
 
-import About from '../components/About'
-import Contact from '../components/Contact'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import Work from '../components/Work'
-import VideoModal from '../components/VideoModal'
+import About from "../components/About";
+import Contact from "../components/Contact";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Work from "../components/Work";
+import VideoModal from "../components/VideoModal";
 
-import { client } from '../lib/client'
-import { useRef } from 'react'
+import { client } from "../lib/client";
+import { useRef } from "react";
 
 const Home = ({ featuredProjects }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [embedId, setEmbedId] = useState('')
-  const navRef = useRef(null)
-  const aboutRef = useRef(null)
-  const workRef = useRef(null)
-  const contactRef = useRef(null)
-  const sidebarRef = useRef(null)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [embedId, setEmbedId] = useState("");
+  const navRef = useRef(null);
+  const aboutRef = useRef(null);
+  const workRef = useRef(null);
+  const contactRef = useRef(null);
+  const sidebarRef = useRef(null);
 
   return (
     <div className="">
@@ -57,7 +57,7 @@ const Home = ({ featuredProjects }) => {
       <footer className="mt-[80px] pb-[20px]">
         <div className="flex flex-col justify-center items-center space-y-2">
           <h4 className="font-fira font-normal text-whiteone text-sm">
-            Designed and built by Victor{' '}
+            Designed and built by Victor{" "}
             <span className="text-secondary">Whyte</span>
           </h4>
           <div className="flex space-x-4">
@@ -80,16 +80,17 @@ const Home = ({ featuredProjects }) => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
 export const getServerSideProps = async () => {
-  const featuredProjectsQuery = '*[_type == "featuredProject"]'
-  const featuredProjects = await client.fetch(featuredProjectsQuery)
+  const featuredProjectsQuery =
+    '*[_type == "featuredProject"] | order(orderNum asc)';
+  const featuredProjects = await client.fetch(featuredProjectsQuery);
 
   return {
     props: { featuredProjects },
-  }
-}
+  };
+};
 
-export default Home
+export default Home;
