@@ -13,8 +13,6 @@ import { client } from "../lib/client";
 import { useRef } from "react";
 
 const Home = ({ featuredProjects, otherProjects, uxCaseStudies }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [embedId, setEmbedId] = useState("");
   const navRef = useRef(null);
   const aboutRef = useRef(null);
   const workRef = useRef(null);
@@ -42,16 +40,10 @@ const Home = ({ featuredProjects, otherProjects, uxCaseStudies }) => {
         <Work
           projects={{ featuredProjects, otherProjects, uxCaseStudies }}
           sectionRef={workRef}
-          setIsModalOpen={setIsModalOpen}
-          setEmbedId={setEmbedId}
         />
         <Contact sectionRef={contactRef} />
 
-        <VideoModal
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
-          embedId={embedId}
-        />
+        <VideoModal />
       </main>
 
       <footer className="mt-[80px] pb-[20px]">

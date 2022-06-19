@@ -6,7 +6,7 @@ import CaseStudy from "./CaseStudy";
 
 import { urlFor } from "../lib/client";
 
-function Work({ sectionRef, setIsModalOpen, setEmbedId, projects }) {
+function Work({ sectionRef, projects }) {
   const { featuredProjects, otherProjects, uxCaseStudies } = projects;
   return (
     <SectionContainer amount={0.2} sectionRef={sectionRef}>
@@ -24,7 +24,7 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId, projects }) {
             desc,
             sourceUrl,
             liveUrl,
-            embedId,
+            embedId
           }) => (
             <FeaturedProject
               key={_id}
@@ -34,8 +34,6 @@ function Work({ sectionRef, setIsModalOpen, setEmbedId, projects }) {
               desc={desc}
               sourceUrl={sourceUrl}
               liveUrl={liveUrl}
-              setIsModalOpen={setIsModalOpen}
-              setEmbedId={setEmbedId}
               embedId={embedId}
             />
           )

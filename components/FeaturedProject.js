@@ -1,21 +1,22 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FaGithub, FaExternalLinkAlt, FaPlayCircle } from 'react-icons/fa'
+import { useStateContext } from '../context/StateContext'
 
-function FeaturedProject({
+const FeaturedProject = ({
   projectImg,
   title,
   desc,
   techUsed,
   sourceUrl,
   liveUrl,
-  setIsModalOpen,
-  embedId,
-  setEmbedId,
-}) {
+  embedId
+}) => {
+
+  const { setIsModalOpen, setCurrentEmbedId } = useStateContext()
   const handlePlay = () => {
     setIsModalOpen(true)
-    setEmbedId(embedId)
+    setCurrentEmbedId(embedId)
   }
   const featuredProjectVariant = {
     hidden: {
