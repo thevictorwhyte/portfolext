@@ -1,11 +1,9 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import { useStateContext } from "../context/StateContext";
 
-export default function VideoModal({
-  isModalOpen,
-  setIsModalOpen,
-  embedId = "S94KLPJvcvM",
-}) {
+export default function VideoModal() {
+  const { setIsModalOpen, isModalOpen, currentEmbedId } = useStateContext()
   function closeModal() {
     setIsModalOpen(false);
   }
@@ -64,7 +62,7 @@ export default function VideoModal({
                   <iframe
                     width="853"
                     height="480"
-                    src={`https://www.youtube.com/embed/${embedId}`}
+                    src={`https://www.youtube.com/embed/${currentEmbedId}`}
                     className="left-0 top-0 h-full w-full absolute"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
