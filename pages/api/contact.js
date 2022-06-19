@@ -7,7 +7,6 @@ let nodemailer = require("nodemailer");
       user: process.env.SMTP_USERNAME,
       pass: process.env.SMTP_PASS,
     },
-    secure: true,
   });
 export default async function (req, res) {
   try {
